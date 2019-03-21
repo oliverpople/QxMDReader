@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Linking, TouchableNativeFeedback } from "react-native";
+import { View, Linking, TouchableHighlight } from "react-native";
 import { Text, Button, Card, Divider } from "react-native-elements";
 import moment from "moment";
 
@@ -19,16 +19,14 @@ export default class Article extends React.Component {
       "https://wallpaper.wiki/wp-content/uploads/2017/04/wallpaper.wiki-Images-HD-Diamond-Pattern-PIC-WPB009691.jpg";
 
     return (
-      <TouchableNativeFeedback
-        useForeground
-        onPress={() => Linking.openURL(url)}
-      >
+      <TouchableHighlight onPress={() => Linking.openURL(url)}>
         <Card
           featuredTitle={title}
           featuredTitleStyle={featuredTitleStyle}
           image={{
             uri: urlToImage || defaultImg
           }}
+          onPress={() => Linking.openURL(url)}
         >
           <Text style={{ marginBottom: 10 }}>
             {description || "Read More.."}
@@ -41,7 +39,7 @@ export default class Article extends React.Component {
             <Text style={noteStyle}>{time}</Text>
           </View>
         </Card>
-      </TouchableNativeFeedback>
+      </TouchableHighlight>
     );
   }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { FlatList } from "react-native";
-import { getNews } from "./src/news";
+import { getNews } from "./src/news.js";
 import Article from "./src/components/Article";
 
 export default class App extends React.Component {
