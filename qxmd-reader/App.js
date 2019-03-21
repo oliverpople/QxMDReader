@@ -1,7 +1,8 @@
 import React from "react";
-import { FlatList } from "react-native";
+import { FlatList, View } from "react-native";
 import { getNews } from "./src/news.js";
 import Article from "./src/components/Article";
+import Header from "./src/components/Header";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -31,13 +32,16 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <FlatList
-        data={this.state.articles}
-        renderItem={({ item }) => <Article article={item} />}
-        keyExtractor={item => item.url}
-        refreshing={this.state.refreshing}
-        onRefresh={this.handleRefresh.bind(this)}
-      />
+      <View>
+        <Header headerText="Medical News" />
+        <FlatList
+          data={this.state.articles}
+          renderItem={({ item }) => <Article article={item} />}
+          keyExtractor={item => item.url}
+          refreshing={this.state.refreshing}
+          onRefresh={this.handleRefresh.bind(this)}
+        />
+      </View>
     );
   }
 }
