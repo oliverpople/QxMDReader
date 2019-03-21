@@ -16,3 +16,7 @@ First checkout this repo, then install and run the server with the following com
 
 Download the expo app from itunes here: https://itunes.apple.com/us/app/expo-client/id982107779?mt=8 
 Follow instructions on command line.
+
+# UX
+
+![](medicalnews.gif)
